@@ -18,6 +18,7 @@ class LoginPage extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Center(child: Text(" LOGIN PAGE")),
               SizedBox(
@@ -47,14 +48,46 @@ class LoginPage extends StatelessWidget {
                   TextButton(onPressed: () {}, child: Text("Forgot password?")),
                 ],
               ),
-              MaterialButton(
-                onPressed: () {},
-                child: Text(
-                  "Sign In",
-                  style: TextStyle(
-                      fontSize: 25, letterSpacing: 3, color: Colors.black),
+              Container(
+                height: 40,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    gradient: LinearGradient(colors: [
+                      Colors.teal.shade100,
+                      Colors.teal.shade900,
+                      Colors.tealAccent
+                    ])),
+                child: MaterialButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Sign In",
+                    style: TextStyle(
+                        fontSize: 25, letterSpacing: 3, color: Colors.black),
+                  ),
                 ),
               ),
+              SizedBox(
+                height: 40,
+                child: Divider(
+                  height: 8,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Don't have an account ? "),
+                  TextButton(
+                    onPressed: () {
+                      print("tapped register");
+                    },
+                    child: Text(
+                      "Register Account",
+                      style: TextStyle(color: Colors.teal.shade900),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),
