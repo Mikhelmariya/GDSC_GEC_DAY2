@@ -19,26 +19,41 @@ class LoginPage extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              Center(child: Text("SIGN IN")),
+              Center(child: Text(" LOGIN PAGE")),
               SizedBox(
                 height: 20,
               ),
               TextFormField(
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(), labelText: "Email"),
+                  border: OutlineInputBorder(),
+                  labelText: "Email",
+                  prefixIcon: Icon(Icons.email),
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
               TextFormField(
+                obscureText: true,
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(), labelText: "password"),
+                    border: OutlineInputBorder(),
+                    labelText: "password",
+                    prefixIcon: Icon(Icons.lock),
+                    suffixIcon: Icon(Icons.remove_red_eye)),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(onPressed: () {}, child: Text("Forgot password?")),
                 ],
+              ),
+              MaterialButton(
+                onPressed: () {},
+                child: Text(
+                  "Sign In",
+                  style: TextStyle(
+                      fontSize: 25, letterSpacing: 3, color: Colors.black),
+                ),
               ),
             ],
           ),
